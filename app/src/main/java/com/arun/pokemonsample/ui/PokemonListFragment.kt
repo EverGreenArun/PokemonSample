@@ -134,8 +134,10 @@ class PokemonListFragment : BaseFragment<FragmentPokemonListBinding, PokemonList
     private val onPokemonClickListener = object : OnPokemonClickListener {
         override fun onPokemonClick(url: PokemonUrl) {
             url.url?.let {
-                dataBinding.container.startShimmer()
-                viewModel.getPokemonData(it)
+                if (isNetworkConnected()) {
+                    dataBinding.container.startShimmer()
+                    viewModel.getPokemonData(it)
+                }
             }
         }
     }
