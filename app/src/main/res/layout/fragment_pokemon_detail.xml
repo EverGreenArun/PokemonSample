@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable name="pokemonVM" type="com.arun.pokemonsample.ui.PokemonDetailFragmentViewModel"/>
+    </data>
+    <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:background="@android:color/darker_gray">
+        <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+            <com.facebook.shimmer.ShimmerFrameLayout
+                    android:id="@+id/shimmer_container"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/recycler_pokemon"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@android:color/darker_gray"
+                        android:padding="@dimen/size_5dp"
+                        android:nestedScrollingEnabled="false"/>
+            </com.facebook.shimmer.ShimmerFrameLayout>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/PokemonSizeText"
+                    android:layout_marginStart="@dimen/size_10dp"
+                    android:layout_marginEnd="@dimen/size_10dp"
+                    android:text="@{pokemonVM.getHeight()}"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/PokemonSizeText"
+                    android:layout_marginStart="@dimen/size_10dp"
+                    android:layout_marginEnd="@dimen/size_10dp"
+                    android:text="@{pokemonVM.getWeight()}"/>
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/PokemonSizeText"
+                    android:layout_marginStart="@dimen/size_10dp"
+                    android:layout_marginEnd="@dimen/size_10dp"
+                    android:text="@{pokemonVM.getExperience()}"
+                    android:layout_marginBottom="@dimen/size_10dp"/>
+
+
+            <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/abilities_layout"
+                    android:layout_margin="@dimen/size_10dp"
+                    app:flexWrap="wrap"
+                    app:alignItems="stretch"
+                    app:alignContent="stretch"
+                    android:visibility="gone">
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/PokemonSizeText"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size_16"
+                        android:text="@string/abilities"
+                        app:layout_order="1"/>
+            </com.google.android.flexbox.FlexboxLayout>
+
+            <com.google.android.flexbox.FlexboxLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/moves_layout"
+                    android:layout_margin="@dimen/size_10dp"
+                    app:flexWrap="wrap"
+                    app:alignItems="stretch"
+                    app:alignContent="stretch"
+                    android:visibility="gone">
+                <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        style="@style/PokemonSizeText"
+                        android:textStyle="bold"
+                        android:textSize="@dimen/text_size_16"
+                        android:text="@string/moves"
+                        app:layout_order="1"/>
+            </com.google.android.flexbox.FlexboxLayout>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

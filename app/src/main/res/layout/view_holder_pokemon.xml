@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+                name="pokemon"
+                type="com.arun.pokemonsample.pojo.PokemonUrl"/>
+    </data>
+
+    <androidx.cardview.widget.CardView
+            android:id="@+id/card_pokemon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/white"
+            app:cardCornerRadius="@dimen/size_10dp"
+            app:contentPadding="@dimen/size_10dp"
+            android:layout_margin="@dimen/size_5dp"
+            app:elevation="@dimen/size_2dp">
+        <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/size_20sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:shadowColor="@android:color/holo_green_light"
+                android:shadowDx="4"
+                android:shadowDy="-4"
+                android:textAllCaps="true"
+                android:ems="10"
+                android:shadowRadius="1"/>
+    </androidx.cardview.widget.CardView>
+
+</layout>

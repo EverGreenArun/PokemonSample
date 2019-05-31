@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">PokemonSample</string>
+    <string name="abilities">Abilities</string>
+    <string name="moves">Moves</string>
+</resources>
